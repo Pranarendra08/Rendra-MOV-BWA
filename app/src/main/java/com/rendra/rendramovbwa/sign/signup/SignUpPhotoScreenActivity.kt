@@ -154,6 +154,7 @@ class SignUpPhotoScreenActivity : AppCompatActivity(), PermissionListener{
 //        }
 //    }
 
+    //ini adalah update bug kamera
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {

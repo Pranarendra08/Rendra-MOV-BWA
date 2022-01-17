@@ -69,7 +69,7 @@ class SignUpActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 var user = dataSnapshot.getValue(User::class.java)
                 if (user == null) {
-                    mDatabaseReference.child(sUsername).setValue(user)
+                    mDatabaseReference.child(sUsername).setValue(data)
 
                     var goSignUpPhotoScreen = Intent(this@SignUpActivity,
                         SignUpPhotoScreenActivity::class.java).putExtra("nama", data.nama)

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "880968445148",
+    "project_id": "rendra-mov-bwa",
+    "storage_bucket": "rendra-mov-bwa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880968445148:android:2036f77a8d49bc5cde1819",
+        "android_client_info": {
+          "package_name": "com.rendra.rendramovbwa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880968445148-f2aujelb1nvmqat7gohavh9nft3tm7ek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCDFSM97--AY9mh_nZJc06A-kXg7sjLbM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880968445148-f2aujelb1nvmqat7gohavh9nft3tm7ek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

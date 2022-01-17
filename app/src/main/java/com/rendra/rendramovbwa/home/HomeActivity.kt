@@ -1,7 +1,8 @@
-package com.rendra.rendramovbwa
+package com.rendra.rendramovbwa.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.rendra.rendramovbwa.R
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

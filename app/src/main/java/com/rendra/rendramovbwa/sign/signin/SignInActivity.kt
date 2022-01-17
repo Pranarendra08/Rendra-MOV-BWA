@@ -8,7 +8,7 @@ import com.google.firebase.database.*
 import com.rendra.rendramovbwa.R
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
-import com.rendra.rendramovbwa.HomeActivity
+import com.rendra.rendramovbwa.home.HomeActivity
 import com.rendra.rendramovbwa.sign.signup.SignUpActivity
 import com.rendra.rendramovbwa.utils.Preferences
 

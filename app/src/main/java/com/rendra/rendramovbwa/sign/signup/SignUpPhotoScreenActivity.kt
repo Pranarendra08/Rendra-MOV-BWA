@@ -1,37 +1,29 @@
 package com.rendra.rendramovbwa.sign.signup
 
-import android.annotation.SuppressLint
 import android.app.Activity
-import android.app.Instrumentation
 import android.app.ProgressDialog
 import android.content.Intent
-import android.graphics.Bitmap
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.view.View
-import android.widget.ProgressBar
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.karumi.dexter.Dexter
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
-import com.karumi.dexter.listener.PermissionRequestErrorListener
 import com.karumi.dexter.listener.single.PermissionListener
-import com.rendra.rendramovbwa.HomeActivity
+import com.rendra.rendramovbwa.home.HomeActivity
 import com.rendra.rendramovbwa.R
 import com.rendra.rendramovbwa.utils.Preferences
 import kotlinx.android.synthetic.main.activity_sign_up_photoscreen.*
 import java.util.*
-import java.util.jar.Manifest
 
 class SignUpPhotoScreenActivity : AppCompatActivity(), PermissionListener{
 

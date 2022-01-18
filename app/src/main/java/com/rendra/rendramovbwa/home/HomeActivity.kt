@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.rendra.rendramovbwa.R
+import com.rendra.rendramovbwa.home.dashboard.DashboardFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -14,7 +14,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         val fragmentTiket = TiketFragment()
-        val fragmentSetting = SettingFragment()
+        val fragmentSetting = DashboardFragment()
         val fragmentHome = DashboardFragment()
 
         setFragment(fragmentHome)

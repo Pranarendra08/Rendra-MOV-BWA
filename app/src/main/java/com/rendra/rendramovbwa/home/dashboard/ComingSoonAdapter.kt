@@ -13,23 +13,23 @@ import com.rendra.rendramovbwa.R
 import com.rendra.rendramovbwa.model.Film
 import java.util.*
 
-class NowPlayingAdapter(private var data: List<Film>,
+class ComingSoonAdapter(private var data: List<Film>,
                         private val listener:(Film) -> Unit)
-    : RecyclerView.Adapter<NowPlayingAdapter.ViewHolder>() {
+    : RecyclerView.Adapter<ComingSoonAdapter.ViewHolder>() {
 
     lateinit var contextAdapter : Context
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): NowPlayingAdapter.ViewHolder {
+    ): ComingSoonAdapter.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         contextAdapter = parent.context
-        val inflatedView = layoutInflater.inflate(R.layout.row_item_now_playing, parent, false)
+        val inflatedView = layoutInflater.inflate(R.layout.row_item_coming_soon, parent, false)
         return ViewHolder(inflatedView)
     }
 
-    override fun onBindViewHolder(holder: NowPlayingAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ComingSoonAdapter.ViewHolder, position: Int) {
         holder.bindItem(data[position], listener, contextAdapter)
     }
 

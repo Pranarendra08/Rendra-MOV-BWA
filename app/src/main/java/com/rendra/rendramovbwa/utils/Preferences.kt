@@ -8,6 +8,7 @@ class Preferences (val context: Context) {
         const val USER_PREF = "USER_PREF"
 
     }
+
     var sharedPreferences = context.getSharedPreferences(USER_PREF, 0)
 
     fun setValue(key: String, value: String) {
@@ -20,3 +21,4 @@ class Preferences (val context: Context) {
         return sharedPreferences.getString(key, "")
     }
 }
+

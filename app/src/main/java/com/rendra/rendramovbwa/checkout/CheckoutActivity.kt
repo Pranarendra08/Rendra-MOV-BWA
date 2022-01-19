@@ -27,6 +27,11 @@ class CheckoutActivity : AppCompatActivity() {
             total += dataList[a].harga!!.toInt()
         }
 
+        btn_tiket.setOnClickListener {
+            var intent =  Intent(this, CheckoutSuccessActivity::class.java)
+            startActivity(intent)
+        }
+
         dataList.add(Checkout("Total harus dibayar", total.toString()))
 
         rv_checkout.layoutManager = LinearLayoutManager(this)

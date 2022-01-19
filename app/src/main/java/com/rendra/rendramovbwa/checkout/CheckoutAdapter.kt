@@ -38,7 +38,7 @@ class CheckoutAdapter(private var data: List<Checkout>,
     override fun getItemCount(): Int = data.size
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val tvTitle:TextView = view.findViewById(R.id.tv_kursi)
+        private val tvTitle:TextView = view.findViewById(R.id.tv_seat)
         private val tvHarga:TextView = view.findViewById(R.id.tv_harga)
 
         fun bindItem(data:Checkout, listener: (Checkout) -> Unit, context: Context) {
@@ -53,8 +53,6 @@ class CheckoutAdapter(private var data: List<Checkout>,
             } else {
                 tvTitle.setText("Seat No. " + data.kursi)
             }
-            tvTitle.setText(data.kursi)
-            tvHarga.setText(data.harga)
 
             itemView.setOnClickListener {
                 listener(data)

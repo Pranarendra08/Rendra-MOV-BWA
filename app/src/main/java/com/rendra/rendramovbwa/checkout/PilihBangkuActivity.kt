@@ -1,11 +1,11 @@
-package com.rendra.rendramovbwa
+package com.rendra.rendramovbwa.checkout
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class DetailActivity : AppCompatActivity() {
+class PilihBangkuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail)
+        setContentView(R.layout.activity_pilih_bangku2)
     }
 }

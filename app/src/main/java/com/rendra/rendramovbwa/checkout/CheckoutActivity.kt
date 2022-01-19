@@ -9,7 +9,7 @@ import com.rendra.rendramovbwa.model.Checkout
 import com.rendra.rendramovbwa.model.Film
 import kotlinx.android.synthetic.main.activity_pilih_bangku.*
 
-class PilihBangkuActivity : AppCompatActivity() {
+class CheckoutActivity : AppCompatActivity() {
 
     var statusA1: Boolean = false
     var statusA2: Boolean = false

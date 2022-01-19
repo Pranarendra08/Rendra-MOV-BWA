@@ -8,7 +8,7 @@
     tools:context=".onboarding.OnboardingOneActivity">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_home"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -17,10 +17,12 @@
         android:background="@drawable/shape_rectangle_pink"
         android:text="@string/beli_tiket"
         android:textColor="@color/white"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible"/>
 
     <TextView
         android:id="@+id/textView"
@@ -49,7 +51,7 @@
         app:srcCompat="@drawable/ic_baseline_arrow_back_white_24" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/tv_kursi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -67,7 +69,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kursi"
         app:srcCompat="@drawable/path" />
 
     <TextView
@@ -94,6 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView17">
 
         <ImageView
+            android:id="@+id/a1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="20dp"
@@ -101,6 +104,7 @@
             android:src="@drawable/shape_line_blu_grey" />
 
         <ImageView
+            android:id="@+id/a2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="0dp"
@@ -116,6 +120,7 @@
             android:textColor="@color/white"/>
 
         <ImageView
+            android:id="@+id/a3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="20dp"
@@ -123,6 +128,7 @@
             android:src="@drawable/shape_line_blu_grey" />
 
         <ImageView
+            android:id="@+id/a4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="0dp"
@@ -144,6 +150,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <ImageView
+            android:id="@+id/b1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="20dp"
@@ -151,6 +158,7 @@
             android:src="@drawable/shape_line_blu_grey" />
 
         <ImageView
+            android:id="@+id/b2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="0dp"
@@ -166,6 +174,7 @@
             android:textColor="@color/white"/>
 
         <ImageView
+            android:id="@+id/b3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="20dp"
@@ -173,6 +182,7 @@
             android:src="@drawable/shape_line_blu_grey" />
 
         <ImageView
+            android:id="@+id/b4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="0dp"
@@ -291,7 +301,7 @@
         android:gravity="center|start"
         android:text="@string/empty"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/btn_home"
         app:layout_constraintStart_toEndOf="@+id/textView21" />
 
     <TextView
@@ -305,7 +315,7 @@
         android:padding="2dp"
         android:text="@string/booked"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/btn_home"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -319,7 +329,7 @@
         android:padding="2dp"
         android:text="@string/selected_seat"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/btn_home"
         app:layout_constraintStart_toEndOf="@+id/textView18" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

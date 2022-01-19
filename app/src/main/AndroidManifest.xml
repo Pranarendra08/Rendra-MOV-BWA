@@ -28,6 +28,9 @@
             android:name=".checkout.PilihBangkuActivity"
             android:exported="false" />
         <activity
+            android:name=".checkout.CheckoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".CheckOut"
             android:exported="true" />
         <activity

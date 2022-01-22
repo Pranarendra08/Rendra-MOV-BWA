@@ -6,6 +6,7 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.rendra.rendramovbwa.R
 import com.rendra.rendramovbwa.home.dashboard.DashboardFragment
+import com.rendra.rendramovbwa.home.tiket.TiketFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {

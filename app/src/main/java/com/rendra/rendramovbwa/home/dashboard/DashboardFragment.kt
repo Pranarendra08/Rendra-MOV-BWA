@@ -45,6 +45,8 @@ class DashboardFragment : Fragment() {
 
         tv_nama.setText(preferences.getValue("nama"))
         if (preferences.getValue("saldo").equals("")) {
+            tv_saldo.text = "Rp0"
+        } else {
             currency(preferences.getValue("saldo")!!.toDouble(), tv_saldo)
         }
 
@@ -54,7 +56,7 @@ class DashboardFragment : Fragment() {
             .into(iv_profile)
 
         rv_now_playing.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        rv_coming_soon.layoutManager = LinearLayoutManager(context)
+        rv_coming_soon.layoutManager = LinearLayoutManager(context!!.applicationContext)
         getData()
 
     }
@@ -86,10 +88,10 @@ class DashboardFragment : Fragment() {
         })
     }
 
-    private fun currency(harga : Double, textview: TextView) {
-        val localID = Locale("in", "ID")
-        val format = NumberFormat.getCurrencyInstance(localID)
-        textView.setText(format.format(harga))
+    private fun currency(harga: Double, textview: TextView) {
+        val localeID = Locale("in", "ID")
+        val formatRupiah = NumberFormat.getCurrencyInstance(localeID)
+        textview.setText(formatRupiah.format(harga))
     }
 
 }

@@ -12,6 +12,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.karumi.dexter.PermissionToken
@@ -21,6 +22,7 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import com.rendra.rendramovbwa.home.HomeActivity
 import com.rendra.rendramovbwa.R
+import com.rendra.rendramovbwa.sign.signin.User
 import com.rendra.rendramovbwa.utils.Preferences
 import kotlinx.android.synthetic.main.activity_sign_up_photoscreen.*
 import java.util.*
@@ -35,16 +37,24 @@ class SignUpPhotoScreenActivity : AppCompatActivity(), PermissionListener{
     lateinit var storageReferensi: StorageReference
     lateinit var preferences: Preferences
 
+    lateinit var user : User
+    private lateinit var mFirebaseDatabase: DatabaseReference
+    private lateinit var mFirebaseInstance: FirebaseDatabase
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_photoscreen)
 
         preferences = Preferences(this)
-        storage = FirebaseStorage.getInstance("gs://rendra-mov-bwa.appspot.com/")
+        storage = FirebaseStorage.getInstance()
         storageReferensi = storage.getReference()
 
-        tv_hello.text = "Selamat Datang\n" + intent.getStringExtra("nama")
+        mFirebaseInstance = FirebaseDatabase.getInstance("https://rendra-mov-bwa-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        mFirebaseDatabase = mFirebaseInstance.getReference("User")
+
+        user = intent.getParcelableExtra("data")!!
+        tv_hello.text = "Selamat Datang\n" + user.nama
 
         iv_add.setOnClickListener {
             if (statusAdd) {
@@ -80,10 +90,10 @@ class SignUpPhotoScreenActivity : AppCompatActivity(), PermissionListener{
                 ref.putFile(filePath)
                     .addOnSuccessListener {
                         progressDialog.dismiss()
-                        Toast.makeText(this, "Uploaded", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@SignUpPhotoScreenActivity, "Uploaded", Toast.LENGTH_LONG).show()
 
                         ref.downloadUrl.addOnSuccessListener {
-                            preferences.setValue("url", it.toString())
+                            saveToFirebase(it.toString())
                         }
 
                         finishAffinity()
@@ -99,7 +109,7 @@ class SignUpPhotoScreenActivity : AppCompatActivity(), PermissionListener{
                         progressDialog.setMessage("Upload " + progress.toInt() + " %")
                     }
             } /*else {
-                //TAMBAHIN SENDIRI WTF
+
             }*/
         }
 
@@ -169,5 +179,30 @@ class SignUpPhotoScreenActivity : AppCompatActivity(), PermissionListener{
         } else {
             Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun saveToFirebase(url: String) {
+        mFirebaseDatabase.child(user.username!!).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                user.url = url
+                mFirebaseDatabase.child(user.username!!).setValue(user)
+
+                preferences.setValue("nama", user.nama.toString())
+                preferences.setValue("user", user.username.toString())
+                preferences.setValue("saldo", "")
+                preferences.setValue("url", "")
+                preferences.setValue("email", user.email.toString())
+                preferences.setValue("status", "1")
+
+                finishAffinity()
+                val goHome = Intent(this@SignUpPhotoScreenActivity, HomeActivity::class.java)
+                startActivity(goHome)
+            }
+
+            override fun onCancelled(p0: DatabaseError) {
+                Toast.makeText(this@SignUpPhotoScreenActivity, ""+p0.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
     }
 }

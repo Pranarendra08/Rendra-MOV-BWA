@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.rendra.rendramovbwa.R
 import com.rendra.rendramovbwa.home.HomeActivity
+import com.rendra.rendramovbwa.home.tiket.TiketActivity
 import kotlinx.android.synthetic.main.activity_checkout_success.*
 
 class CheckoutSuccessActivity : AppCompatActivity() {
@@ -16,6 +17,13 @@ class CheckoutSuccessActivity : AppCompatActivity() {
             finishAffinity()
 
             var intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+
+        btn_tiket.setOnClickListener {
+            finishAffinity()
+
+            var intent = Intent(this, TiketActivity::class.java)
             startActivity(intent)
         }
 

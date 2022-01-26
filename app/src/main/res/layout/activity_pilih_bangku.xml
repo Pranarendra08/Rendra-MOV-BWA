@@ -285,13 +285,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:drawableLeft="@drawable/emptyseat"
         android:drawablePadding="10dp"
         android:gravity="center|start"
         android:text="@string/empty"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btn_home"
         app:layout_constraintStart_toEndOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
@@ -300,13 +299,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:drawableLeft="@drawable/bookedseat"
         android:gravity="center"
         android:padding="2dp"
         android:text="@string/booked"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btn_home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
@@ -315,13 +313,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:drawableLeft="@drawable/selectedseat"
         android:gravity="center|start"
         android:padding="2dp"
         android:text="@string/selected_seat"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btn_home"
         app:layout_constraintStart_toEndOf="@+id/textView18"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 

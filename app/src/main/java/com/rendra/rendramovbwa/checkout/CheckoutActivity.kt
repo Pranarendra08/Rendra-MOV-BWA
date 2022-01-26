@@ -13,7 +13,9 @@ import android.view.View
 import androidx.core.app.NotificationCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rendra.rendramovbwa.R
+import com.rendra.rendramovbwa.home.tiket.TiketActivity
 import com.rendra.rendramovbwa.model.Checkout
+import com.rendra.rendramovbwa.model.Film
 import com.rendra.rendramovbwa.utils.Preferences
 import kotlinx.android.synthetic.main.activity_checkout.*
 
@@ -29,6 +31,7 @@ class CheckoutActivity : AppCompatActivity() {
 
         preferences = Preferences(this)
         dataList = intent.getSerializableExtra("data") as ArrayList<Checkout>
+        val data = intent.getParcelableExtra<Film>("datas")
 
         for (a in dataList.indices) {
             total += dataList[a].harga!!.toInt()
@@ -38,7 +41,7 @@ class CheckoutActivity : AppCompatActivity() {
             var intent =  Intent(this, CheckoutSuccessActivity::class.java)
             startActivity(intent)
 
-            showNotif()
+            showNotif(data!!)
         }
 
         dataList.add(Checkout("Total harus dibayar", total.toString()))
@@ -49,7 +52,7 @@ class CheckoutActivity : AppCompatActivity() {
         }
     }
 
-    private fun showNotif() {
+    private fun showNotif(datas: Film) {
         val NOTIFICATION_CHANNERL_ID = "channel_bwa_notif"
         val context = this.applicationContext
         var notificationManager = context.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
@@ -62,9 +65,14 @@ class CheckoutActivity : AppCompatActivity() {
             notificationManager.createNotificationChannel(mChannel)
         }
 
-        val mIntent = Intent(this, CheckoutSuccessActivity::class.java)
+//        val mIntent = Intent(this, CheckoutSuccessActivity::class.java)
+//        val bundle = Bundle()
+//        bundle.putString("id", "id_film")
+//        mIntent.putExtras(bundle)
+
+        val mIntent = Intent(this, TiketActivity::class.java)
         val bundle = Bundle()
-        bundle.putString("id", "id_film")
+        bundle.putParcelable("data", datas)
         mIntent.putExtras(bundle)
 
         val pendingIntent = PendingIntent.getActivity(this, 0, mIntent, PendingIntent.FLAG_UPDATE_CURRENT)
@@ -77,8 +85,8 @@ class CheckoutActivity : AppCompatActivity() {
             .setVibrate(longArrayOf(1000, 1000, 1000, 1000))
             .setLights(Color.RED, 3000, 3000)
             .setDefaults(Notification.DEFAULT_SOUND)
-            .setContentTitle("Pembayaran Telah di Terima")
-            .setContentText("bwamov")
+            .setContentTitle("Sukses Terbeli")
+            .setContentText("Tiket ${datas.judul} berhasil kamu dapatkan. Enjoy the movie!")
 
         notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(115, builder.build())

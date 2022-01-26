@@ -20,12 +20,6 @@ class CheckoutSuccessActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btn_tiket.setOnClickListener {
-            finishAffinity()
-
-            var intent = Intent(this, TiketActivity::class.java)
-            startActivity(intent)
-        }
 
     }
 }

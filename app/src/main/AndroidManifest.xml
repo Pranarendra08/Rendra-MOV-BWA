@@ -40,7 +40,7 @@
             android:name=".CheckOut"
             android:exported="true" />
         <activity
-            android:name=".MyWallet"
+            android:name=".wallet.MyWallet"
             android:exported="true" />
         <activity
             android:name=".History"

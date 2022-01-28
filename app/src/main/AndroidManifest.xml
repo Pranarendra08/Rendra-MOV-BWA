@@ -25,6 +25,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RendraMOVBWA">
         <activity
+            android:name=".wallet.MyWalletTopUpActivity"
+            android:exported="false" />
+        <activity
             android:name=".home.tiket.TiketActivity"
             android:exported="false" />
         <activity

@@ -1,5 +1,6 @@
 package com.rendra.rendramovbwa.wallet
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -48,7 +49,7 @@ class MyWallet : AppCompatActivity() {
         }
 
         btn_top_up.setOnClickListener {
-
+            startActivity(Intent(this, MyWalletTopUpActivity::class.java))
         }
     }
 }

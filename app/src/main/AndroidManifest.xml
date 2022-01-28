@@ -46,6 +46,9 @@
             android:name=".wallet.MyWallet"
             android:exported="true" />
         <activity
+            android:name=".wallet.MyWalletSuccessActivity"
+            android:exported="true" />
+        <activity
             android:name=".History"
             android:exported="true" />
         <activity

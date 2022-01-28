@@ -44,6 +44,6 @@ class MyWalletTopUpActivity : AppCompatActivity() {
         textView.setBackgroundResource(R.drawable.shape_line_white)
         status10K = false
 
-        btn_top_up.visibility = View.VISIBLE
+        btn_top_up.visibility = View.INVISIBLE
     }
 }

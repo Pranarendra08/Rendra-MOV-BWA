@@ -41,6 +41,7 @@ class TiketAdapter(private var data: List<Checkout>,
         private val tvTitle:TextView = view.findViewById(R.id.tv_seat)
 
         fun bindItem(data:Checkout, listener: (Checkout) -> Unit, context: Context) {
+            //disini
             tvTitle.setText("Seat No. " + data.kursi)
 
             itemView.setOnClickListener {

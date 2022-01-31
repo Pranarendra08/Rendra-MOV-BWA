@@ -7,6 +7,7 @@ import android.view.View
 import com.rendra.rendramovbwa.R
 import com.rendra.rendramovbwa.model.Checkout
 import com.rendra.rendramovbwa.model.Film
+import com.rendra.rendramovbwa.utils.DetailActivity
 import kotlinx.android.synthetic.main.activity_pilih_bangku.*
 
 class PilihBangkuActivity : AppCompatActivity() {
@@ -97,6 +98,11 @@ class PilihBangkuActivity : AppCompatActivity() {
         btn_home.setOnClickListener {
             var intent = Intent(this, CheckoutActivity::class.java).putExtra("data", dataList).putExtra("datas", data)
             startActivity(intent)
+        }
+
+        iv_back.setOnClickListener {
+            var goBack = Intent(this, DetailActivity::class.java)
+            startActivity(goBack)
         }
     }
 

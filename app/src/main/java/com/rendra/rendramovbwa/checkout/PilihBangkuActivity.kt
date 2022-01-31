@@ -99,11 +99,6 @@ class PilihBangkuActivity : AppCompatActivity() {
             var intent = Intent(this, CheckoutActivity::class.java).putExtra("data", dataList).putExtra("datas", data)
             startActivity(intent)
         }
-
-        iv_back.setOnClickListener {
-            var goBack = Intent(this, DetailActivity::class.java)
-            startActivity(goBack)
-        }
     }
 
     private fun beliTiket(total: Int) {

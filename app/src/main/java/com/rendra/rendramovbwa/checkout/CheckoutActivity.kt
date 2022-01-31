@@ -38,7 +38,7 @@ class CheckoutActivity : AppCompatActivity() {
         }
 
         btn_tiket.setOnClickListener {
-            var intent =  Intent(this, CheckoutSuccessActivity::class.java)
+            var intent =  Intent(this, CheckoutSuccessActivity::class.java).putExtra("datas", dataList)
             startActivity(intent)
 
             showNotif(data!!)
@@ -49,6 +49,11 @@ class CheckoutActivity : AppCompatActivity() {
         rv_checkout.layoutManager = LinearLayoutManager(this)
         rv_checkout.adapter = CheckoutAdapter(dataList) {
 
+        }
+
+        iv_back.setOnClickListener {
+            var goBack = Intent(this, PilihBangkuActivity::class.java)
+            startActivity(goBack)
         }
     }
 

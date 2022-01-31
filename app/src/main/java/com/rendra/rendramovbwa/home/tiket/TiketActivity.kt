@@ -21,7 +21,7 @@ class TiketActivity : AppCompatActivity() {
         setContentView(R.layout.activity_tiket)
 
         preferences = Preferences(this)
-//        dataList = intent.getSerializableExtra("data") as ArrayList<Checkout>
+//        dataList = intent.getSerializableExtra("datas") as ArrayList<Checkout>
         var data = intent.getParcelableExtra<Film>("data")
 
         tv_title.text = data!!.judul

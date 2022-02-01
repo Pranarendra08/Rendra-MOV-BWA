@@ -25,6 +25,9 @@ class EditProfile : AppCompatActivity() {
             .apply(RequestOptions.circleCropTransform())
             .into(iv_profile_picture)
 
-
+//        et_username.text = preferences.getValue("username")
+//        et_password.text = preferences.getValue("password")
+//        et_name.text = preferences.getValue("nama")
+//        et_email.text = preferences.getValue("email")
     }
 }

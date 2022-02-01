@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.rendra.rendramovbwa.EditProfile
 import com.rendra.rendramovbwa.R
 import com.rendra.rendramovbwa.utils.Preferences
 import com.rendra.rendramovbwa.wallet.MyWallet
@@ -40,6 +41,10 @@ class SettingFragment : Fragment() {
 
         tv_my_wallet.setOnClickListener {
             startActivity(Intent(activity, MyWallet::class.java))
+        }
+
+        tv_edit_profile.setOnClickListener {
+            startActivity(Intent(activity, EditProfile::class.java))
         }
     }
 
